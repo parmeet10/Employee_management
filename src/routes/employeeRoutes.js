@@ -1,0 +1,11 @@
+import express from "express";
+import EmployeeController from "../controllers/employeeController.js";
+const employeeRoutes = express.Router();
+employeeRoutes.post('/employee/signup', new EmployeeController().signup);
+employeeRoutes.get('/employee/details', new EmployeeController().employeeDetail);
+employeeRoutes.patch('/employee/delete', new EmployeeController().employeeDeletion);
+employeeRoutes.patch('/employee/address/update', new EmployeeController().addressUpdate);
+employeeRoutes.delete('/employee/removal', new EmployeeController().removeEmployee);
+employeeRoutes.patch('/employee/promotion', new EmployeeController().employeePromotion);
+employeeRoutes.get('/employee/count',new EmployeeController().employeeCount);
+export default employeeRoutes; 

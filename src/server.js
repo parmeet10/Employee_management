@@ -1,4 +1,5 @@
 import express from "express";
+import router from "./routes/index.js";
 
 class Server {
     constructor(app) {
@@ -7,7 +8,8 @@ class Server {
         this.init();
     }
     init() {
-        this.app.use(express.json())
+        this.app.use(express.json());
+        this.app.use('/',router)
     }
     start() {
         this.app.listen(this.port, () => {
